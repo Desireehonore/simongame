@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Simon</title>
+        <style>
+            .maintable {
+                border:1px solid black;
+                margin-left:auto;
+                margin-right:auto;
+            }
+            
+            .maintable td {
+                border: 1px solid black;
+                width:128px;
+                height:128px;
+                text-align:center;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="maintable">
+            <tr>
+                <th colspan="2">Simon</th>
+            </tr>
+            <tr>
+                <td id="orange" style="background-color:coral"></td>
+                <td id="blue" style="background-color:deepskyblue"></td>
+            </tr>
+            <tr>
+                <td id="green" style="background-color:mediumaquamarine"></td>
+                <td id="pink" style="background-color:pink"></td>
+            </tr>
+            <tr>
+                <td colspan="2" style="width:unset;height:unset;">
+                    <button>Start</button>
+                </td>
+            </tr>
+            
+            
+        </table>
+        <script>
+            //BLUE: deepskyblue>>cornflowerblue PINK: pink>>lightcoral; 
+            //ORANGE: coral>>tomato ; GREEN: mediumaquamarine>>seagreen;
+            
+            function changeLightColor(tdName,newColor)
+            {
+                var td=document.getElementById(tdName);
+                td.style.backgroundColor=newColor;
+            }
+            
+            function toggleLight(tdName,oldColor,newColor)
+            {
+                changeLightColor(tdName,newColor);
+                
+                setTimeout(function() {
+                     changeLightColor(tdName,oldColor);
+                    },1000);
+            }
+            
+            
+            toggleLight("pink","pink","lightcoral");  
+            
+            
+            
+        </script>
+    </body>
+</html>
